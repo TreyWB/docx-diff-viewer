@@ -1,0 +1,17 @@
+{
+  "name": "docx-diff-viewer",
+  "version": "1.0.0",
+  "description": "A web application that displays side-by-side differences between two .docx files",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "mammoth": "^1.6.0",
+    "diff": "^5.1.0",
+    "cheerio": "^1.0.0-rc.12"
+  }
+}

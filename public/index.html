@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Docx Diff Viewer</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Landing Page View -->
+    <section class="landing-page" id="landing-page">
+      <h1>Docx Diff Viewer</h1>
+      <p class="subtitle">Compare two Word documents side by side</p>
+
+      <div class="upload-section">
+        <div class="file-inputs">
+          <div class="file-input-wrapper" id="original-wrapper">
+            <label for="original">Original Document</label>
+            <input type="file" id="original" accept=".docx">
+            <div class="file-button">Choose file</div>
+            <span class="file-name" id="original-name">No file selected</span>
+          </div>
+          <div class="file-input-wrapper" id="modified-wrapper">
+            <label for="modified">Modified Document</label>
+            <input type="file" id="modified" accept=".docx">
+            <div class="file-button">Choose file</div>
+            <span class="file-name" id="modified-name">No file selected</span>
+          </div>
+        </div>
+        <button id="compare" disabled>Compare Documents</button>
+      </div>
+
+      <div class="error-message" id="error"></div>
+    </section>
+
+    <!-- Loading State -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <span>Comparing documents...</span>
+    </div>
+
+    <!-- Compare View Header -->
+    <header class="compare-header" id="compare-header">
+      <div class="header-content">
+        <h1>Docx Diff Viewer</h1>
+        <div class="stats-section" id="stats">
+          <span class="stat added"><span id="stat-added">0</span> added</span>
+          <span class="stat removed"><span id="stat-removed">0</span> removed</span>
+          <span class="stat modified"><span id="stat-modified">0</span> modified</span>
+          <span class="stat unchanged"><span id="stat-unchanged">0</span> unchanged</span>
+        </div>
+        <button id="reset">New Comparison</button>
+      </div>
+    </header>
+
+    <!-- Diff Container -->
+    <main class="diff-container" id="diff-container">
+      <div class="panel left-panel">
+        <div class="panel-header" id="left-header">Original</div>
+        <div class="panel-content" id="left-content"></div>
+      </div>
+      <div class="panel right-panel">
+        <div class="panel-header" id="right-header">Modified</div>
+        <div class="panel-content" id="right-content"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/fileUpload.js"></script>
+  <script src="js/diffRenderer.js"></script>
+  <script src="js/scrollSync.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
