@@ -6,7 +6,7 @@ A lightweight, privacy-first web application that lets you drag-and-drop two Mic
 
 ## Quick Start
 1. Clone or download this repo  
-2. Serve the folder with any static-file server (e.g. `npm start`)  
+2. Start server (e.g. `npm start`)  
 3. Open http://localhost:3000  
 4. Drop two `.docx` files and watch the diff appear instantly  
 
