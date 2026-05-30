@@ -3,7 +3,9 @@ const path = require('path');
 const diffRoutes = require('./routes/diff');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const portArg = process.argv.find((arg) => arg.startsWith('--port='));
+const cliPort = portArg ? Number.parseInt(portArg.split('=')[1], 10) : undefined;
+const PORT = cliPort || process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
